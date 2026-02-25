@@ -4,20 +4,23 @@ Fix rsync PATH on Windows by adding the Chocolatey rsync bin directory to your `
 
 ## Usage
 
-```powershell
-npx github:rsxdalv/rsync-windows-pathfix --fixPath
-```
+The CLI now supports separate actions for updating the current session and persisting the PATH change.
 
-This will:
-1. Permanently add `C:\ProgramData\chocolatey\lib\rsync\tools\bin` to your user-level `PATH` in the Windows registry.
-2. Print the PowerShell command to update your current session immediately.
+```powershell
+# Update the current PowerShell session only (no registry changes)
+npx github:rsxdalv/rsync-windows-pathfix --fixSession
+
+# Persist the rsync path to your user PATH (registry) for new sessions
+npx github:rsxdalv/rsync-windows-pathfix --persist
+
+```
 
 ### Update the current PowerShell session
 
 To apply the PATH change in your current terminal session without reopening it, run:
 
 ```powershell
-Invoke-Expression (npx github:rsxdalv/rsync-windows-pathfix --fixPath)
+Invoke-Expression (npx github:rsxdalv/rsync-windows-pathfix --fixSession)
 ```
 
 This is equivalent to running:
