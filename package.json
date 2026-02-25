@@ -1,0 +1,16 @@
+{
+  "name": "rsync-windows-pathfix",
+  "version": "1.0.0",
+  "description": "Fix rsync PATH on Windows by adding the Chocolatey rsync bin directory",
+  "bin": {
+    "rsync-windows-pathfix": "./cli.js"
+  },
+  "keywords": [
+    "rsync",
+    "windows",
+    "path",
+    "fix",
+    "chocolatey"
+  ],
+  "license": "MIT"
+}
